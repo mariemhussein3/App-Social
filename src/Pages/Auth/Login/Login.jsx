@@ -43,7 +43,7 @@ export default function Login() {
       { 
         localStorage.setItem("token",res.data.token);
         insertUserToken(res.data.token)
-         navigate("/")
+         navigate("/home")
       }
     })
     .catch((err)=>{
@@ -95,7 +95,7 @@ export default function Login() {
         <button
          disabled={!formState.isValid}
           type="submit"
-          className="text-white disabled:bg-blue-300 bg-blue-500 hover:bg-blue-600 focus:ring-0 focus:outline-none focus:ring-transparent font-medium rounded-none w-full text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-500 dark:focus:ring-transparent"
+          className="text-white cursor-pointer disabled:bg-blue-300 bg-blue-500 hover:bg-blue-600 focus:ring-0 focus:outline-none focus:ring-transparent font-medium rounded-none w-full text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-500 dark:focus:ring-transparent"
         >
           {loading?<i className="fas fa-spinner fa-spin"></i>:"submit"}
         </button>

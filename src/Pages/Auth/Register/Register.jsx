@@ -62,7 +62,7 @@ export default function Register() {
    axios.post(`https://linked-posts.routemisr.com/users/signup`,data)
     .then((res)=>{
       if(res.data.message==="success")
-      {  navigate("/login")
+      {  navigate("/")
       }
       setIsLoading(false);
     })
@@ -77,7 +77,7 @@ export default function Register() {
     <>
     {apiError&&<h1 className="bg-amber-300 py-2 px-7 text-center my-7">{apiError}</h1>}
           <div className="">
-        <div className="lg:w-[55%] w-full mx-auto my-20 bg-[#fff] shadow-2xl rounded-2xl py-20">
+        <div className="lg:w-[55%] w-full mx-auto bg-[#fff] shadow-2xl rounded-2xl py-10 mt-5">
           <div className="flex lg:gap-10 gap-15 items-center justify-center  flex-col lg:flex-row">
   <div className="flex flex-col  items-center justify-center lg:w-[60%]">
         <form
@@ -185,7 +185,7 @@ export default function Register() {
         
           type="submit"
           // disabled={!formState.isValid}
-          className="text-white  disabled:bg-blue-300 bg-blue-500 hover:bg-blue-600 focus:ring-0 focus:outline-none focus:ring-transparent font-medium rounded-none w-full text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-500 dark:focus:ring-transparent"
+          className="text-white cursor-pointer disabled:bg-blue-300 bg-blue-500 hover:bg-blue-600 focus:ring-0 focus:outline-none focus:ring-transparent font-medium rounded-none w-full text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-500 dark:focus:ring-transparent"
         >
           {isLoading?<i className="fas fa-spinner fa-spin"></i>:"submit"}
         </button>

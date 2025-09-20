@@ -12,6 +12,6 @@ export default function ProtectedRouting(props) {
   else
     // مينفعش استخدم useNavigate عشان هي function وهو عايز jsx 
     // عشان ميكتبش فوق اسم component children
-  return <Navigate to="/login"/>
+  return <Navigate to="/"/>
   // return <Login/>
  }

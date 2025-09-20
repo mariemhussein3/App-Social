@@ -18,19 +18,19 @@ export default function Navbar() {
   }
   useEffect(() => {
     seIisOpen(false);
-  }, [token]); 
+  }, [token,data]); 
 
   function logout() {
     localStorage.removeItem("token");
     clearUserToken();
-    navigate("/login");
+    navigate("/");
   }
   return (
     <>
       <nav className=" border-gray-200 bg-gray-50 text-slate-800 fixed top-0 left-0 w-full shadow-sm z-50">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link
-            to=""
+            to="/"
             className="text-slate-800 flex items-center space-x-3 rtl:space-x-reverse"
           >
             <span className="self-center text-2xl font-semibold whitespace-nowrap ">
@@ -38,16 +38,17 @@ export default function Navbar() {
             </span>
           </Link>
           <div className="text-slate-800 flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse gap-7 justify-center">
-              <Link
-            to=""
+       
+            {token && (
+              <>
+                     <Link
+            to="home"
             className="text-slate-800 flex items-center space-x-3 rtl:space-x-reverse"
           >
             <span className="self-center text-[16px] font-semibold whitespace-nowrap ">
              ALL Posts
             </span>
           </Link>
-            {token && (
-              <>
                 <button
                   type="button"
                   className="text-slate-800 flex text-sm relative bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
@@ -116,7 +117,7 @@ export default function Navbar() {
                 <ul className="flex gap-3 text-slate-800 ml-5">
                  
                   <li>
-                    <Link to="/login">Login</Link>
+                    <Link to="/">Login</Link>
                   </li>
                 </ul>
               </>

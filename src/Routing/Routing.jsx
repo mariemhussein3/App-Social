@@ -9,6 +9,7 @@ import Login from './../Pages/Auth/Login/Login';
 import Register from './../Pages/Auth/Register/Register';
 import Notfound from './../components/Notfound/Notfound';
 import UpdateProfile from './../Pages/UpateProfile/UpdateProfile';
+import ProtectedAuthRouting from './../components/ProtectedAuthRouting/ProtectedAuthRouting';
 
 
       const routes = createBrowserRouter([
@@ -16,13 +17,13 @@ import UpdateProfile from './../Pages/UpateProfile/UpdateProfile';
       path: "",
       element: <Layout></Layout>,
       children: [
-        { index: true, element:<ProtectedRouting> <Home /></ProtectedRouting>
+        { index: true, element:<ProtectedAuthRouting> <Login /></ProtectedAuthRouting>
          },
         { path: "profile", element: <ProtectedRouting><Profile /></ProtectedRouting> },
         { path: "UpdateProfile", element: <ProtectedRouting><UpdateProfile /></ProtectedRouting> },
         { path: "/postdetails/:id", element: <ProtectedRouting><PostDetails /></ProtectedRouting> },
-        { path: "login", element: <Login /> },
-        { path: "register", element: <Register /> },
+        { path: "home", element: <Home /> },
+        { path: "register", element: <ProtectedAuthRouting><Register /> </ProtectedAuthRouting>},
         { path: "*", element: <Notfound /> },
       ],
     },
