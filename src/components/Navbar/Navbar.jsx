@@ -27,13 +27,13 @@ export default function Navbar() {
   }
   return (
     <>
-      <nav className=" border-gray-200 bg-gray-50 text-slate-800 fixed top-0 left-0 w-full shadow-sm z-50">
+      <nav className=" border-gray-200 bg-gray-50 dark:bg-slate-800 text-slate-800 fixed top-0 left-0 w-full shadow-sm z-50">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link
             to="/"
             className="text-slate-800 flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <span className="self-center text-2xl font-semibold whitespace-nowrap ">
+            <span className="self-center text-2xl font-semibold whitespace-nowrap text-slate-700 dark:text-white">
               Social App
             </span>
           </Link>
@@ -43,7 +43,7 @@ export default function Navbar() {
               <>
                      <Link
             to="home"
-            className="text-slate-800 flex items-center space-x-3 rtl:space-x-reverse"
+            className="text-slate-800 dark:text-white flex items-center space-x-3 rtl:space-x-reverse"
           >
             <span className="self-center text-[16px] font-semibold whitespace-nowrap ">
              ALL Posts
@@ -73,11 +73,11 @@ export default function Navbar() {
                     id="user-dropdown"
                   >
                     <div className="px-4 py-3">
-                      <span className="block text-sm text-gray-900 ">
+                      <span className="block text-sm text-gray-900 dark:text-white">
                         {data?.name}
                       </span>
 
-                      <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">
+                      <span className="block text-sm  text-gray-500 truncate dark:text-gray-50">
                         {data?.email}
                       </span>
                     </div>
@@ -85,7 +85,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           to="/profile"
-                          className="text-slate-800 block px-4 py-2 text-sm  hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                          className="text-slate-800 block px-4 py-2 text-sm  hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white dark:hover:text-white"
                         >
                           profile
                         </Link>
@@ -93,7 +93,7 @@ export default function Navbar() {
                        <li>
                         <Link
                           to="/updateProfile"
-                          className="text-slate-800 block px-4 py-2 text-sm  hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                          className="text-slate-800 block px-4 py-2 text-sm  hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white dark:hover:text-white"
                         >
                           Update Profile
                         </Link>
@@ -101,7 +101,7 @@ export default function Navbar() {
                       <li>
                         <span
                           onClick={logout}
-                          className="block px-4 py-2 cursor-pointer text-sm text-slate-800 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                          className="block px-4 py-2 cursor-pointer text-sm text-slate-800  hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white dark:hover:text-white"
                         >
                           log out
                         </span>
@@ -114,7 +114,7 @@ export default function Navbar() {
 
             {!token && (
               <>
-                <ul className="flex gap-3 text-slate-800 ml-5">
+                <ul className="flex gap-3 text-slate-800 dark:text-white ml-5">
                  
                   <li>
                     <Link to="/">Login</Link>

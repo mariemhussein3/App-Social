@@ -75,20 +75,20 @@ export default function Register() {
 
   return (
     <>
-    {apiError&&<h1 className="bg-amber-300 py-2 px-7 text-center my-7">{apiError}</h1>}
+    {apiError&&<h1 className="bg-amber-300 dark:bg-slate-800 py-2 px-7 text-center my-7">{apiError}</h1>}
           <div className="">
-        <div className="lg:w-[55%] w-full mx-auto bg-[#fff] shadow-2xl rounded-2xl py-10 mt-5">
+        <div className="lg:w-[55%] w-full mx-auto bg-[#fff] dark:bg-slate-700 shadow-2xl rounded-2xl py-10 mt-5">
           <div className="flex lg:gap-10 gap-15 items-center justify-center  flex-col lg:flex-row">
   <div className="flex flex-col  items-center justify-center lg:w-[60%]">
         <form
         className="lg:mt-10  w-full mx-17 px-10 flex flex-col"
-        onSubmit={handleSubmit(handleRegister)}>        {/* هتبعتلها الداتا الي user كتبها */}
+        onSubmit={handleSubmit(handleRegister)}>        
         <div className="relative z-0 w-full mb-5 group">
           <input
             type="text"
             {...register("name")}
             id="name"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="block py-2.5 px-0 w-full  text-sm text-slate-700 dark:text-white placeholder:text-white  bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder="Enter Your Name"
           />
 
@@ -101,7 +101,7 @@ export default function Register() {
 
             {...register("email")}
             id="email"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="block py-2.5 px-0 w-full text-sm text-slate-700 dark:text-white placeholder:text-white  bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder="Enter Your Email"
           />
      
@@ -112,7 +112,7 @@ export default function Register() {
             type="password"
             {...register("password")}
             id="password"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="block py-2.5 px-0 w-full text-sm text-slate-700 dark:text-white placeholder:text-white  bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder="Enter Your password"
           />
        
@@ -125,7 +125,7 @@ export default function Register() {
             type="password"
             {...register("rePassword")}
             id="rePassword"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="block py-2.5 px-0 w-full text-sm text-slate-700 dark:text-white placeholder:text-white  bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder="Enter Your rePassword"
           />
           {formState.errors.rePassword&&formState.touchedFields.rePassword?<p className="text-red-400 text-center">{formState.errors.rePassword.message}</p>:""}
@@ -136,7 +136,7 @@ export default function Register() {
             type="date"
             {...register("dateOfBirth")}
             id="dateOfBirth"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="block py-2.5 px-0 w-full text-sm text-slate-700 dark:text-white placeholder:text-white  bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder="Enter Your Date"
           />
 
@@ -150,11 +150,11 @@ export default function Register() {
               type="radio"
               {...register("gender")}
               value="male"
-              className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+              className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-white"
             />
             <label
               htmlFor="male"
-              className="block ms-2  text-sm font-medium text-gray-900 dark:text-gray-300"
+              className="block ms-2  text-sm font-medium text-slate-700 dark:text-white "
             >
               male
             </label>
@@ -168,11 +168,11 @@ export default function Register() {
               type="radio"
               {...register("gender")}
               value="female"
-              className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+              className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-white"
             />
             <label
               htmlFor="female"
-              className="block ms-2  text-sm font-medium text-gray-900 dark:text-gray-300"
+              className="block ms-2  text-sm font-medium text-slate-700 dark:text-white "
             >
               female
             </label>
@@ -190,7 +190,7 @@ export default function Register() {
           {isLoading?<i className="fas fa-spinner fa-spin"></i>:"submit"}
         </button>
       </form>
-    <Link to="/login">  <p className="my-3 underline underline-offset-8 text-slate-600 hover:text-blue-600">Already have an account</p></Link>
+    <Link to="/login">  <p className="my-3 underline underline-offset-8 text-slate-600 hover:text-blue-600 dark:text-white dark:hover:text-slate-50">Already have an account</p></Link>
 
   </div>
             <div className="img-register lg:w-[45%] w-full px-10">

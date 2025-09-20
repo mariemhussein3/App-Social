@@ -122,7 +122,7 @@ let{register,handleSubmit,setValue}= useForm(
             className="size-[35px] rounded-full"
             alt=""
             />
-          <div className="text-slate-700 flex flex-col">
+          <div className="text-slate-700 dark:text-white flex flex-col">
             <h3>{name}</h3>
             <span> {new Date(createdAt).toLocaleDateString()}</span>
           </div>
@@ -134,24 +134,24 @@ let{register,handleSubmit,setValue}= useForm(
        
       <div className="relative inline-block">
   <div
-    className="  border-0 text-slate-700 rounded-none px-2 flex items-center justify-center text-center font-medium text-sm 
-    hover:bg-gray-100 focus:outline-none focus:ring-0"
+    className="  border-0 text-slate-700 dark:text-white focus:bg-slate-700 hover:bg-transparent rounded-none px-2 flex items-center justify-center text-center font-medium text-sm 
+    focus:outline-none focus:ring-0"
     onClick={() => setOpenMenu(!openMenu)}
   >
     <HiOutlineDotsHorizontal />
   </div>
 
   {openMenu && (
-    <div className="flex flex-col bg-gray-50 absolute top-10 left-0 z-10 w-[150px] p-3 rounded-md shadow-lg">
+    <div className="flex flex-col bg-gray-50 dark:bg-slate-800  absolute top-10 left-0 z-10 w-[150px] p-3 rounded-md shadow-lg">
       <div
         onClick={() => { setOpenModal(true); setOpenMenu(false); }}
-        className="mb-1  text-slate-800 py-2 w-full cursor-pointer hover:bg-gray-200 px-1"
+        className="mb-1  text-slate-800 py-2 w-full cursor-pointer hover:bg-gray-200 dark:hover:bg-slate-700 dark:text-white px-1"
         >
         Update
       </div>
       <div
         onClick={() => { mutate(); setOpenMenu(false); }}
-        className="mb-1  text-slate-800 py-2 w-full cursor-pointer hover:bg-gray-200 px-1"
+        className="mb-1  text-slate-800 py-2 w-full cursor-pointer hover:bg-gray-200 dark:hover:bg-slate-700 dark:text-white px-1"
         >
         Delete
       </div>
@@ -164,16 +164,16 @@ let{register,handleSubmit,setValue}= useForm(
 
             {isPostPart&& 
       <Modal show={openModal} onClose={() => setOpenModal(false)}>
-        <ModalBody>
+        <ModalBody className="bg-white dark:bg-slate-700">
           <form onSubmit={handleSubmit(updatePost)}>
            
-            <div className="space-y-6 bg-white">
+            <div className="space-y-6 bg-white dark:bg-slate-700 text-slate-700 dark:text-white">
               <input
               {...register("body")}
               
             type="text"
             placeholder="what's on your mind?"
-            className="cursor-pointer  placeholder:text-slate-500 w-full"
+            className="cursor-pointer text-slate-700 dark:text-white dark:bg-slate-700 dark:border-slate-50 placeholder:text-slate-500 dark:placeholder:text-white w-full"
           />
         <label className="cursor-pointer hover:text-red-500">
               <FileInput ref={updateImage} type="file" className="hidden"/>
@@ -204,7 +204,7 @@ let{register,handleSubmit,setValue}= useForm(
               {...register("content")}
               type="text"
               placeholder="what's on your mind?"
-            className=" cursor-pointer bg-transparent  placeholder:text-slate-500 w-full"
+            className=" cursor-pointer bg-transparent text-slate-700 dark:text-white   placeholder:text-slate-500 dark:placeholder:text-white w-full"
             />
           </div>
         <ModalFooter>

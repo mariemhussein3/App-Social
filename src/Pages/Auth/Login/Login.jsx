@@ -57,7 +57,7 @@ export default function Login() {
   return (
     <>
         <div className="">
-      <div className="lg:w-[55%] w-full mx-auto my-20 bg-[#fff] shadow-2xl rounded-2xl py-20">
+      <div className="lg:w-[55%] w-full mx-auto my-20 bg-[#fff] dark:bg-slate-800  shadow-2xl rounded-2xl py-20">
         <div className="flex lg:gap-10 gap-15 items-center justify-center  flex-col lg:flex-row">
 <div className=" lg:w-1/2 flex flex-col justify-center items-center">
         <form
@@ -70,7 +70,7 @@ export default function Login() {
 
             {...register("email")}
             id="email"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent dark:placeholder:text-white border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" Enter Your Email"
           />
      
@@ -83,7 +83,7 @@ export default function Login() {
             {...register("password")}
             id="password"
             placeholder=" Enter Your password"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="block py-2.5 px-0 w-full text-sm text-slate-700 dark:text-white dark:placeholder:text-white   bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
            
           />
     
@@ -100,7 +100,7 @@ export default function Login() {
           {loading?<i className="fas fa-spinner fa-spin"></i>:"submit"}
         </button>
       </form>
-    <Link to="/register">  <p className="my-3 underline underline-offset-8 text-slate-600 hover:text-blue-600">Create new account</p></Link>
+    <Link to="/register">  <p className="my-3 underline underline-offset-8 text-slate-700 dark:text-white hover:text-blue-600 dark:hover:text-gray-50 ">Create new account</p></Link>
 </div>
          <div className="img-register lg:w-1/2 w-full px-10">
             <img src={imgSignin} className="w-full" alt="" />
