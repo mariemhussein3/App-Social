@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+/*@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+
+@layer utilities {
+  .container {
+    margin-inline: auto;
+    padding: 0px 20px;
+  }
+}
+
+:root {
+  --color-pink: #90c;
+  --font-alex: "Alex Brush", cursive;
+}
+.row{
+    @apply flex flex-wrap;
+} */
+
